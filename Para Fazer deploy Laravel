@@ -1,0 +1,5 @@
+$ php composer dumpautoload -o
+$ php artisan config: cache
+rota $ php artisan: cache
+
+composer update --optimize-autoloader --no-dev
