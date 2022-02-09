@@ -3,7 +3,7 @@ namespace Source\Support;
 use PHPMailer\PHPMailer\PHPMailer;
 use Exception;
 
-class Email1{
+class SendEmail{
     private static  $para_email;
     private static $para_nome;
     private static $error;
@@ -31,12 +31,10 @@ class Email1{
             $emailEnviar->msgHTML($corpo);
             $emailEnviar->setLanguage("br");
 
-            //AddAddress PARA ONDE VAI A SMS
-
+           //AddAddress PARA ONDE VAI A SMS
             $emailEnviar->addAddress(self::$para_email,self::$para_nome);
             
             //CONFIGURAÇÃO DO SMTP
-
             $emailEnviar->Host=CONF_SMTP_MAIL['host'];
             $emailEnviar->Port=CONF_SMTP_MAIL['port'];
             $emailEnviar->Password=CONF_SMTP_MAIL['passwd'];
@@ -49,12 +47,10 @@ class Email1{
                self::$error;
                return false;
                }
-
         }
 
         public  function error():?Exception{
 
-            
                    return self::$error;
             }
 
